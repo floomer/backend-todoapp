@@ -1,7 +1,7 @@
 import User from '../model/user.model';
 import { Request, Response } from 'express';
 
-export class UserController { // APILOGGER?
+export class UserController {
   public async getAllUsers(req: Request, res: Response) {
     try {
       const result = await User.findAll();
@@ -53,9 +53,5 @@ export class UserController { // APILOGGER?
     } catch (e) {
       res.status(404).json('Error!');
     }
-  }
-
-  public hello() {
-    console.log('Hello static');
   }
 }

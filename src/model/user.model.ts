@@ -1,5 +1,4 @@
-import { Model, Sequelize, DataTypes } from 'sequelize';
-import sequelizeConnection from '../config/db.config';
+import { Model, DataTypes } from 'sequelize';
 import { Database } from '../config/db.config2';
 
 export default class User extends Model {

@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
+import 'dotenv/config';
 
 export class Database {
   public sequelize: Sequelize;

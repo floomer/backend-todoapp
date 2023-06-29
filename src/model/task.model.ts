@@ -1,5 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import { Database } from '../config/db.config2';
+import { Database } from '../config/db.config';
 
 export default class Task extends Model {
   public id?: number;

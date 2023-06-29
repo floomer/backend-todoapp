@@ -8,7 +8,7 @@ export default class TaskController {
       const tasks = await Task.findAll();
       res.status(200).json(tasks);
     } catch (e) {
-      res.status(404).json('Error occurred!');
+      res.status(400).json('Error! Bad Request');
     }
   }
 
@@ -17,7 +17,7 @@ export default class TaskController {
       const task = await Task.findOne({ where: { id: req.params.id } });
       res.status(200).json(task);
     } catch (e) {
-      res.status(404).json('Error occurred!');
+      res.status(400).json('Error! Bad Request');
     }
   }
 
@@ -30,7 +30,7 @@ export default class TaskController {
       });
       res.status(200).json(newTask);
     } catch (e) {
-      res.status(404).json('Error occurred!');
+      res.status(400).json('Error! Bad Request');
     }
   }
 
@@ -46,18 +46,18 @@ export default class TaskController {
             id: req.params.id
           }
         });
-      res.status(200).json(updatedTask);
+      res.status(200).json('Task has been updated');
     } catch (e) {
-      res.status(404).json('Error occurred!');
+      res.status(400).json('Error! Bad Request');
     }
   }
 
   public async deleteTask(req: Request, res: Response) {
     try {
       const deletedTask = await Task.destroy({ where: { id: req.params.id } });
-      res.status(200).json(deletedTask);
+      res.status(200).json('Task has been deleted');
     } catch (e) {
-      res.status(404).json('Error occurred!');
+      res.status(400).json('Error! Bad Request');
     }
   }
 }

@@ -1,7 +1,7 @@
 import express, { Express } from 'express';
-import { Database } from './config/db.config2';
-import userRoutes from './route/user.routes';
-import taskRouter from './route/task.routes';
+import { Database } from './config/db.config';
+import userRoutes from './router/user.routes';
+import taskRouter from './router/task.routes';
 import 'dotenv/config';
 import swaggerUi from 'swagger-ui-express';
 import * as swaggerDocument from './config/swagger.json';
